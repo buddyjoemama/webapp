@@ -1,7 +1,18 @@
 import { useTheme } from "../components/ThemeContext";
+import toast from "react-hot-toast";
+import { useEffect, useRef } from "react";
 
 export default function ThemePage() {
   const { theme, toggleTheme } = useTheme();
+  const prevTheme = useRef(theme);
+
+  useEffect(() => {
+    if (prevTheme.current !== theme) {
+      toast.success(`Theme changed to ${theme}`);
+      prevTheme.current = theme;
+    }
+  }, [theme]);
+
   return (
     <div className="max-w-xl mx-auto mt-12">
       <h1 className="text-3xl font-bold mb-4">Theme Context Example</h1>
