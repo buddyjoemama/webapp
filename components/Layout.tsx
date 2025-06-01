@@ -40,6 +40,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             Theme Status
           </Link>
+          <Link
+            href="/encrypt"
+            className={`py-2 px-3 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-800 ${router.pathname === "/encrypt" ? "bg-gray-300 dark:bg-gray-700 font-semibold" : ""}`}
+          >
+            Encrypt Demo
+          </Link>
+          <Link
+            href="/table-demo"
+            className={`py-2 px-3 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-800 ${router.pathname === "/table-demo" ? "bg-gray-300 dark:bg-gray-700 font-semibold" : ""}`}
+          >
+            Table Demo
+          </Link>
         </nav>
         {/* Main Content */}
         <main className="flex-1 p-8">{children}</main>
